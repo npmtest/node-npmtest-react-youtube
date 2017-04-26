@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-react-youtube/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-react-youtube/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-react-youtube/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-react-youtube/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-react-youtube/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-react-youtube/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-react-youtube/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-react-youtube/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-react-youtube/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-react-youtube/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-react-youtube/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-react-youtube/build/coverage.html/index.html)
 
@@ -35,32 +35,18 @@
 ```json
 
 {
-    "name": "react-youtube",
-    "version": "7.4.0",
-    "description": "react.js powered YouTube player component",
-    "main": "dist/YouTube.js",
-    "module": "es/YouTube.js",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:compedit/react-youtube.git"
+    "author": {
+        "name": "troy betz"
     },
-    "keywords": [
-        "react",
-        "youtube",
-        "player",
-        "react-component"
-    ],
-    "author": "troy betz <troybetz@gmail.com>",
-    "license": "MIT",
     "bugs": {
         "url": "https://github.com/compedit/react-youtube/issues"
     },
-    "homepage": "https://github.com/compedit/react-youtube",
     "dependencies": {
         "lodash.isequal": "^4.4.0",
         "prop-types": "^15.5.3",
         "youtube-player": "^4.2.3"
     },
+    "description": "react.js powered YouTube player component",
     "devDependencies": {
         "babel-cli": "^6.16.0",
         "babel-core": "^6.16.0",
@@ -86,18 +72,50 @@
         "webpack": "^2.3.3",
         "webpack-dev-server": "^2.4.2"
     },
+    "directories": {},
+    "dist": {
+        "shasum": "d346c30ec77eec61871e8c0784cef2cb2c69b63d",
+        "tarball": "https://registry.npmjs.org/react-youtube/-/react-youtube-7.4.0.tgz"
+    },
+    "gitHead": "37b7629dd3d662775f92403e1e20050ba02018c2",
+    "homepage": "https://github.com/compedit/react-youtube",
+    "keywords": [
+        "react",
+        "youtube",
+        "player",
+        "react-component"
+    ],
+    "license": "MIT",
+    "main": "dist/YouTube.js",
+    "maintainers": [
+        {
+            "name": "tjallingt"
+        },
+        {
+            "name": "troybetz"
+        }
+    ],
+    "module": "es/YouTube.js",
+    "name": "react-youtube",
+    "optionalDependencies": {},
     "peerDependencies": {
         "react": ">=0.14.1"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/compedit/react-youtube.git"
+    },
     "scripts": {
-        "test": "mocha",
+        "compile": "npm-run-all --parallel compile:cjs compile:es",
         "compile:cjs": "babel src --out-dir dist",
         "compile:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-        "compile": "npm-run-all --parallel compile:cjs compile:es",
-        "prepublish": "npm run compile",
+        "example": "webpack-dev-server --config example/webpack.config.js",
         "lint": "eslint src",
-        "example": "webpack-dev-server --config example/webpack.config.js"
-    }
+        "prepublish": "npm run compile",
+        "test": "mocha"
+    },
+    "version": "7.4.0",
+    "bin": {}
 }
 ```
 
